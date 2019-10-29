@@ -36,6 +36,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_RevRangeBoundary = 1f;
         [SerializeField] private float m_SlipLimit;
         [SerializeField] private float m_BrakeTorque;
+        public GameObject gm;
 
         private Quaternion[] m_WheelMeshLocalRotations;
         private Vector3 m_Prevpos, m_Pos;
@@ -350,17 +351,15 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
             }
         }
-
-
         private bool AnySkidSoundPlaying()
         {
-            for (int i = 0; i < 4; i++)
-            {
-                if (m_WheelEffects[i].PlayingAudio)
-                {
-                    return true;
-                }
-            }
+            // for (int i = 0; i < 4; i++)
+            // {
+            //     if (m_WheelEffects[i].PlayingAudio)
+            //     {
+            //         return true;
+            //     }
+            // }
             return false;
         }
     }

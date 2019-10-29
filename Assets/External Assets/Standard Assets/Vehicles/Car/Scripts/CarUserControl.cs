@@ -19,10 +19,17 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
+            float rev = 0;
+            float accel = 0;
             // pass the input to the car!
             float steering = CrossPlatformInputManager.GetAxis("Axis4 RightHorizontal");
-            float rev = CrossPlatformInputManager.GetAxis("Axis5 RightVertical");
-            float accel = CrossPlatformInputManager.GetAxis("Axis10_RightTrigger");
+            if(Input.GetButtonDown("RightTouch")){
+                
+                rev = CrossPlatformInputManager.GetAxis("Axis10_RightTrigger");
+            } else {
+                Debug.Log("ruuuun");
+                accel = CrossPlatformInputManager.GetAxis("Axis10_RightTrigger");
+            }
             float leftTrigger = CrossPlatformInputManager.GetAxis("Axis9_LeftTrigger");
             // Debug.Log( "rightTrigger: " + accel);
             // Debug.Log( "leftTrigger: " + leftTrigger);
