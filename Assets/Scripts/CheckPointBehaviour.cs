@@ -22,10 +22,9 @@ public class CheckPointBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player") {
-            gm.SendMessage("setResetPosition", tr);
             nextCP.SetActive(true);
+            gm.SendMessage("setResetPosition", tr);
             this.gameObject.SetActive(false);
         }
-        
     }
 }
